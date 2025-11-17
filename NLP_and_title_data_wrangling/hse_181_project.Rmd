@@ -1,0 +1,75 @@
+---
+title: "Untitled"
+output: html_document
+date: "2025-10-26"
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(scales)
+library(readr)
+```
+```{r}
+# ============================================================
+# Load dataset
+# ============================================================
+df <- read_csv("youtube_shorts_tiktok_trends_2025_labeled.csv")
+
+# ============================================================
+# Friday-only scatter + loess trend line
+# Title Length vs. Average Watch Time
+# Custom JS-style contrasting colors and clean minimal theme
+# ============================================================
+g_plot_out <- ggplot(friday_df, aes(
+  x = title_length, 
+  y = avg_watch_time_sec, 
+  color = viral
+)) +
+  
+  # Scatter points (light with transparency)
+  geom_point(aes(color = viral), alpha = 0.35, size = 1.7) +
+  
+  # Smooth trend line (LOESS captures nonlinear shape)
+  geom_smooth(method = "loess", se = FALSE, size = 1.2) +
+  
+  # Custom contrasting palette (JS-style dark + vibrant blue)
+  scale_color_manual(values = c(
+    "Non-viral" = "#0096C7",   # bright blue
+    "Viral"     = "#0A2A43"    # deep navy
+  )) +
+  
+  # Axis + legend labels
+  labs(
+    x = "Title Length",
+    y = "Average Watch Time (Friday)",
+    color = "Viral Status"
+  ) +
+  
+  # Base minimal theme for clean look
+  theme_minimal(base_size = 15) +
+  
+  # Fine-tune theme: remove grid, add axis lines, adjust text
+  theme(
+    panel.grid = element_blank(),                       # remove background grid
+    axis.line  = element_line(color = "black", linewidth = 0.6),
+    axis.ticks = element_line(color = "black", linewidth = 0.6),
+    plot.title = element_text(face = "bold", size = 20),
+    plot.subtitle = element_text(size = 13, color = "#4F4F4F"),
+    legend.position = "right",
+    legend.title = element_text(face = "bold")
+  )
+```
+
+```{r}
+ggsave(
+  filename = "friday_title_length_watchtime_600dpi.png",
+  plot = g_plot_out,
+  width = 10,        # inches
+  height = 6,        # inches
+  dpi = 600
+)
+```
