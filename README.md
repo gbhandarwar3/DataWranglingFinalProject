@@ -3,6 +3,35 @@ EDA Folder
 1. QBS_181_Final_Proj_EDA.Rmd
 2. Bin_Analysis_EDA.Rmd
 
+Overview:
+This folder analyzes YouTube Shorts and TikTok trend data from 2025, with a special focus on understanding differences between viral and non-viral videos.
+The analysis includes:
+- Genre and category distributions
+- Upload hour patterns
+- Watch-time differences
+- Comparative visualizations (bar plots, line graphs)
+- Exploration of a labeled dataset identifying virality
+- RYANS ANALYSIS
+All code is written in R, using dplyr, ggplot2, and base functions.
+
+QBS_181_Final_Proj_EDA.Rmd
+
+Data Cleaning & Preprocessing:
+This file imports the youtube_shorts_tiktok_trends_2025_labeled.csv and removes variables not required for the analysis.
+The labeled dataset is then filtered into two groups: Viral videos (viral == 1) and Non-viral videos (viral == 0). These subsets form the basis of all downstream visualization and summary analyses.
+
+Analyses & Visualizations:
+1. Genre Distribution: Viral vs Non-Viral
+   A bar chart comparing the percentage breakdown of genres.
+2. Category Distribution Comparison
+   Similar visualization for content categories.
+3. Ranking Viral-Dominant Genres & Categories
+   Top genres/categories for viral content are ranked using:
+4. Upload Timing Trends
+   A line plot compares upload hour patterns between viral and non-viral videos.
+5. Average Watch Time by Day of Week
+   A grouped bar chart visualizes how watch-time performance varies throughout the week for each group.
+
 
 NLP (Bert Topic modeling) & Title Tiktok Dataset Exploration.
 
