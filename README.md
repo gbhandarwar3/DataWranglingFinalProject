@@ -12,6 +12,7 @@ The analysis includes:
 - Comparative visualizations (bar plots, line graphs)
 - Exploration of a labeled dataset identifying virality
 - RYANS ANALYSIS
+
 All code is written in R, using dplyr, ggplot2, and base functions.
 
 QBS_181_Final_Proj_EDA.Rmd
