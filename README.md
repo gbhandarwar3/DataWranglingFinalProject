@@ -1,8 +1,12 @@
+EDA Folder
+2 files:
+1. QBS_181_Final_Proj_EDA.Rmd
+2. Bin_Analysis_EDA.Rmd
 
 
 NLP (Bert Topic modeling) & Title Tiktok Dataset Exploration.
 
-1 First enter in the NLP_and_title_data_wrangling folder. 
+1. First enter in the NLP_and_title_data_wrangling folder. 
 2. There would be two files as showb below: 
 
 Filename I: topic_modeling_example.ipynb. This notebook performs an end-to-end topic modeling workflow for YouTube/TikTok short-form video titles. 
