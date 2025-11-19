@@ -39,7 +39,7 @@ All modeling intentionally avoids post-upload metrics (likes, watch retention) t
 
 # Why This Matters
 
-Only ~2% of short-form videos become viral. This project explores:
+Only ~2% of short-form videos become viral BASED on our virality threshold of 500,000 views. This project explores:
 
 - Which topics, titles, or categories trend more often  
 - Whether timing patterns influence virality  
